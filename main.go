@@ -16,4 +16,9 @@ func main() {
 	conf = initConfig()
 
 	bot = initTelegramBot()
+
+	logTelegram("AnonsRobot daemon successfully started. 🚀")
+	log.Println("AnonsRobot daemon successfully started. 🚀")
+
+	bot.Start()
 }
