@@ -1,6 +1,8 @@
 package main
 
 import (
+	"strings"
+
 	"github.com/bykovme/gotrans"
 	"gopkg.in/tucnak/telebot.v2"
 )
@@ -17,5 +19,7 @@ func userJoined(m *telebot.Message) {
 func unknownCommand(m *telebot.Message) {
 	if m.Private() {
 		bot.Send(m.Sender, gotrans.T("unknown"))
+	} else if strings.HasPrefix(m.Text, "/") {
+		bot.Send(m.Chat, gotrans.T("unknown"))
 	}
 }
