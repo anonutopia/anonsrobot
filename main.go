@@ -1,11 +1,19 @@
 package main
 
-import "log"
+import (
+	"log"
+
+	"gopkg.in/tucnak/telebot.v2"
+)
 
 var conf *Config
 
-func main()  {
+var bot *telebot.Bot
+
+func main() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 
 	conf = initConfig()
+
+	bot = initTelegramBot()
 }
