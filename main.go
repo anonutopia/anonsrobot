@@ -14,6 +14,8 @@ var bot *telebot.Bot
 var db *gorm.DB
 
 func main() {
+	initLangs()
+
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 
 	conf = initConfig()
@@ -21,6 +23,8 @@ func main() {
 	bot = initTelegramBot()
 
 	db = initDb()
+
+	initCommands()
 
 	logTelegram("AnonsRobot daemon successfully started. 🚀")
 	log.Println("AnonsRobot daemon successfully started. 🚀")

@@ -4,15 +4,15 @@ import (
 	"log"
 	"time"
 
-	tb "gopkg.in/tucnak/telebot.v2"
+	"gopkg.in/tucnak/telebot.v2"
 )
 
-func initTelegramBot() *tb.Bot {
-	b, err := tb.NewBot(tb.Settings{
+func initTelegramBot() *telebot.Bot {
+	b, err := telebot.NewBot(telebot.Settings{
 		Token:     conf.TelegramAPIKey,
-		Poller:    &tb.LongPoller{Timeout: TelPollerTimeout * time.Second},
+		Poller:    &telebot.LongPoller{Timeout: TelPollerTimeout * time.Second},
 		Verbose:   conf.Debug,
-		ParseMode: tb.ModeHTML,
+		ParseMode: telebot.ModeHTML,
 	})
 
 	if err != nil {
@@ -23,18 +23,18 @@ func initTelegramBot() *tb.Bot {
 }
 
 func logTelegram(message string) {
-	group := &tb.Chat{ID: TelAnonOps}
+	group := &telebot.Chat{ID: TelAnonOps}
 	if _, err := bot.Send(group, message); err != nil {
 		log.Println(err)
 	}
 }
 
 func messageTelegram(message string, groupId int) {
-	var group *tb.Chat
+	var group *telebot.Chat
 	if conf.Dev {
-		group = &tb.Chat{ID: TelAnonOps}
+		group = &telebot.Chat{ID: TelAnonOps}
 	} else {
-		group = &tb.Chat{ID: int64(groupId)}
+		group = &telebot.Chat{ID: int64(groupId)}
 	}
 	if _, err := bot.Send(group, message); err != nil {
 		log.Println(err)
