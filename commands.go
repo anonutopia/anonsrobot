@@ -13,7 +13,7 @@ func initCommands() {
 }
 
 func userJoined(m *telebot.Message) {
-	bot.Send(m.Chat, gotrans.T("welcome"))
+	bot.Send(m.Chat, trG("welcome", m))
 }
 
 func unknownCommand(m *telebot.Message) {
