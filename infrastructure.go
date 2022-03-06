@@ -17,6 +17,8 @@ func (im *InfrastructureMonitor) start() {
 
 			im.checkNodeAINTAHRK()
 
+			im.checkAINTOrders()
+
 			time.Sleep(time.Minute * 15)
 		}
 	}()
@@ -46,6 +48,17 @@ func (im *InfrastructureMonitor) checkNodeAINTAHRK() {
 		logTelegram("AHRK balance on AINT node is too small.")
 	} else if err != nil {
 		logTelegram("Error checking AINT node balance.")
+	}
+}
+
+func (im *InfrastructureMonitor) checkAINTOrders() {
+	opr, err := gowaves.WMC.OrderbookPair(AINTId, "WAVES", 10)
+	if err == nil {
+		if len(opr.Asks) < 2 {
+			logTelegram("There are not enough AINT orders on DEX.")
+		}
+	} else {
+		logTelegram("Error checking AINT orders.")
 	}
 }
 

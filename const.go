@@ -28,6 +28,9 @@ const (
 	// AHRKId is AHRK asset id
 	AHRKId = string("Gvs59WEEXVAQiRZwisUosG7fVNr8vnzS8mjkgqotrERT")
 
+	// AINTId is AINT asset id
+	AINTId = string("66DUhUoJaoZcstkKpcoN3FUcqjB6v8VJd5ZQd6RsPxhv")
+
 	// FeeAddress is waves address sponsoring fee
 	FeeAddress = "3PDb1ULFjazuzPeWkF2vqd1nomKh4ctq9y2"
 
