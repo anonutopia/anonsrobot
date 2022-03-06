@@ -22,6 +22,9 @@ const (
 	// AHRKAddress is AHRK waves address
 	AHRKAddress = "3PPc3AP75DzoL8neS4e53tZ7ybUAVxk2jAb"
 
+	// AINTAddress is AINT waves address
+	AINTAddress = "3PBmmxKhFcDhb8PrDdCdvw2iGMPnp7VuwPy"
+
 	// AHRKId is AHRK asset id
 	AHRKId = string("Gvs59WEEXVAQiRZwisUosG7fVNr8vnzS8mjkgqotrERT")
 

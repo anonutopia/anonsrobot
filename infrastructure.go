@@ -15,6 +15,8 @@ func (im *InfrastructureMonitor) start() {
 
 			im.checkNodeAHRK()
 
+			im.checkNodeAINTAHRK()
+
 			time.Sleep(time.Minute * 15)
 		}
 	}()
@@ -35,6 +37,15 @@ func (im *InfrastructureMonitor) checkNodeAHRK() {
 		logTelegram("AHRK balance on AHRK node is too small.")
 	} else if err != nil {
 		logTelegram("Error checking AHRK node balance.")
+	}
+}
+
+func (im *InfrastructureMonitor) checkNodeAINTAHRK() {
+	abr, err := gowaves.WNC.AssetsBalance(AINTAddress, AHRKId)
+	if err == nil && int(abr.Balance) < 1000*int(AHRKDec) {
+		logTelegram("AHRK balance on AINT node is too small.")
+	} else if err != nil {
+		logTelegram("Error checking AINT node balance.")
 	}
 }
 
