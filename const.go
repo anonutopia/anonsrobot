@@ -13,6 +13,21 @@ const (
 	// TelAnonutopia group
 	TelAnonutopia = -1001361489843
 
+	// TelKriptokuna group for Kriptokuna messages
+	TelKriptokuna = -1001456424919
+
 	// TelPollerTimeout is Telegram poller timeout in seconds
 	TelPollerTimeout = 30
+
+	// AHRKAddress is AHRK waves address
+	AHRKAddress = "3PPc3AP75DzoL8neS4e53tZ7ybUAVxk2jAb"
+
+	// AHRKId is AHRK asset id
+	AHRKId = string("Gvs59WEEXVAQiRZwisUosG7fVNr8vnzS8mjkgqotrERT")
+
+	// FeeAddress is waves address sponsoring fee
+	FeeAddress = "3PDb1ULFjazuzPeWkF2vqd1nomKh4ctq9y2"
+
+	// SatInBTC represents number of satoshis in 1 bitcoin
+	SatInBTC = uint64(100000000)
 )

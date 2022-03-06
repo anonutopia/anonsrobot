@@ -24,6 +24,8 @@ func main() {
 
 	db = initDb()
 
+	initInfrastructureMonitor()
+
 	initCommands()
 
 	logTelegram("AnonsRobot daemon successfully started. 🚀")

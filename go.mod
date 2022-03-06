@@ -3,6 +3,7 @@ module github.com/anonutopia/anonsrobot
 go 1.16
 
 require (
+	github.com/anonutopia/gowaves v1.0.19
 	github.com/bykovme/gotrans v1.1.0
 	gopkg.in/tucnak/telebot.v2 v2.3.5
 	gorm.io/driver/postgres v1.0.8
