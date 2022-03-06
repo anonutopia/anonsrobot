@@ -30,4 +30,7 @@ const (
 
 	// SatInBTC represents number of satoshis in 1 bitcoin
 	SatInBTC = uint64(100000000)
+
+	// AHRKDec represents number of decimals in AHRK
+	AHRKDec = uint64(1000000)
 )
