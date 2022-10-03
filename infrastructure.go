@@ -17,7 +17,7 @@ func (im *InfrastructureMonitor) start() {
 
 			im.checkNodeAINTAHRK()
 
-			im.checkAINTOrders()
+			// im.checkAINTOrders()
 
 			time.Sleep(time.Minute * 15)
 		}
