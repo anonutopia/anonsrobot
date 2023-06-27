@@ -25,6 +25,7 @@ func (im *InfrastructureMonitor) start() {
 }
 
 func (im *InfrastructureMonitor) checkSponsoredFees() {
+	gowaves.WNC.Host = WavesNodeURL
 	abr, err := gowaves.WNC.AddressesBalance(FeeAddress)
 	if err == nil && abr.Balance < int(SatInBTC) {
 		logTelegram("Fee address WAVES balance is too small.")
@@ -34,6 +35,7 @@ func (im *InfrastructureMonitor) checkSponsoredFees() {
 }
 
 func (im *InfrastructureMonitor) checkNodeAHRK() {
+	gowaves.WNC.Host = WavesNodeURL
 	abr, err := gowaves.WNC.AssetsBalance(AHRKAddress, AHRKId)
 	if err == nil && int(abr.Balance) < 20000*int(AHRKDec) {
 		logTelegram("AHRK balance on AHRK node is too small.")
@@ -43,6 +45,7 @@ func (im *InfrastructureMonitor) checkNodeAHRK() {
 }
 
 func (im *InfrastructureMonitor) checkNodeAINTAHRK() {
+	gowaves.WNC.Host = WavesNodeURL
 	abr, err := gowaves.WNC.AssetsBalance(AINTAddress, AHRKId)
 	if err == nil && int(abr.Balance) < 1000*int(AHRKDec) {
 		logTelegram("AHRK balance on AINT node is too small.")

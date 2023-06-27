@@ -39,4 +39,6 @@ const (
 
 	// AHRKDec represents number of decimals in AHRK
 	AHRKDec = uint64(1000000)
+
+	WavesNodeURL = "https://nodes.wavesplatform.com"
 )
